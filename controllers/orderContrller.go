@@ -99,6 +99,8 @@ func CreateOrder() gin.HandlerFunc {
 				return
 			}
 
+			defer cancel()
+
 			c.JSON(http.StatusOK, res)
 		}
 	}
