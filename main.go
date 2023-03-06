@@ -17,7 +17,7 @@ func main() {
 	port := os.Getenv("PORT")
 
 	if port == "" {
-		port = "8000"
+		port = "9090"
 	}
 
 	router := gin.New()
@@ -32,5 +32,5 @@ func main() {
 	routes.OrderItemRoutes(router)
 	routes.InvoiceRoutes(router)
 
-	router.Run(port)
+	router.Run(":" + port)
 }
